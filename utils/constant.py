@@ -1,8 +1,7 @@
 import os
 
-# GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-
-GEMINI_API_KEY = "AIzaSyDrOpcqD2ntOthg8AmajaaR6bwtF2xx5Rs"
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+# GEMINI_API_KEY = ""
 print(f"GEMINI_API_KEY: showig {GEMINI_API_KEY}")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 ANTHROPI_API_KEY = os.getenv("ANTHROPI_API_KEY")
