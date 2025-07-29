@@ -1,3 +1,9 @@
+# Load environment variables FIRST before any other imports
+from dotenv import load_dotenv
+import os
+load_dotenv(dotenv_path='.env')
+
+# Now import everything else
 from fastapi import FastAPI, HTTPException
 from fastapi.security import HTTPBearer
 import json
@@ -7,11 +13,8 @@ from utils.llm_client import LLMClient
 from utils.questions_generator import QuestionGenerator
 from utils.course_material_service import CourseMaterialService
 from typing import List
-from dotenv import load_dotenv
+
 from fastapi import Form, Body
-
-
-load_dotenv()
 
 # Request/Response Models
 from utils.grading_service import GradingService
