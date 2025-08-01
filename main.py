@@ -8,10 +8,11 @@ from fastapi import FastAPI, HTTPException
 from fastapi.security import HTTPBearer
 import json
 from datetime import datetime
-from utils.models import GeneratedQuestion, QuestionRequest, GradingRequest, GradingResult, QuestionType, BatchGradingRequest
+from utils.models import GeneratedQuestion, QuestionRequest, GradingRequest, GradingResult, QuestionType, BatchGradingRequest, LearningRequest
 from utils.llm_client import LLMClient
 from utils.questions_generator import QuestionGenerator
 from utils.course_material_service import CourseMaterialService
+from src.crew import LearningAIAgent
 from typing import List
 
 from fastapi import Form, Body
@@ -83,9 +84,19 @@ async def upload_multiple_course_material(course_id: str = Form(...), pdf_urls: 
         return {"status": "success", "message": "PDFs uploaded and indexed."}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to upload course material: {str(e)}")
+
+
+@app.post("/ai-teaching-agent")
+def run_crew_api(request: LearningRequest):
+    try:
+        crew_run = LearningAIAgent()
+        result = crew_run.create_crew(request.lang, request.course_id, request.additional_info)
+        return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to run crew: {str(e)}")
+
+
 @app.get("/supported-providers")
-
-
 async def get_supported_providers():
     """Get list of supported LLM providers and their configuration requirements"""
     return {

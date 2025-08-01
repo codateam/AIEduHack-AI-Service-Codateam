@@ -76,3 +76,26 @@ class GradingResult(BaseModel):
 
 class BatchGradingRequest(BaseModel):
     answers: List[GradingRequest]
+
+class LearningRequest(BaseModel):
+    lang: str
+    # context: str
+    course_id: str
+    additional_info: Optional[str] = None
+    # subject: str
+    # difficulty: Literal["easy", "medium", "hard"]
+    # question_types: List[QuestionType]
+    # num_questions: int = Field(ge=1, le=100)
+    # llm_config: LLMConfig = LLMConfig()  # Default to local Ollama config
+    # mark: int = 10  # Default points for each question
+
+class LearningResponse(BaseModel):
+    content: str
+    # course_id: str
+    # subject: str
+    # difficulty: Literal["easy", "medium", "hard"]
+    # question_types: List[QuestionType]
+    # num_questions: int = Field(ge=1, le=100)
+    # llm_config: LLMConfig = LLMConfig()  # Default to local Ollama config
+    # additional_context: Optional[str] = None
+    # mark: int = 10  # Default points for each question

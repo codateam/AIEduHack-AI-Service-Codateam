@@ -40,6 +40,7 @@ class QuestionGenerator:
     
     async def _generate_mcq_questions(self, request: QuestionRequest, count: int) -> List[GeneratedQuestion]:
         context = self.course_material_service.query(request.course_id, request.subject)
+        # print(f"Context {count} {context}")
         prompt = prompt_template.format(
         subject=request.subject,
         question_type=QuestionType.MCQ.value,
