@@ -1,0 +1,22 @@
+teach:
+  description: >
+    Provide a clear and practical explanation of the material related to {context}.
+    The explanation should be adapted to the user's level and presented in a way that is easy to understand, using real-world examples if possible.
+    You can consider additional information {additional_info} if provided and is not related to translation
+  expected_output: >
+    A thorough and beginner-friendly explanation of the topic, written in plain language.
+    The content should be educational, engaging, and focused on helping the user grasp key concepts with clarity.
+
+translate:
+  description: >
+    Translate the tutor's explanation of {context} into the user's preferred language: {language}.
+    Use a modern, conversational tone and ensure the translation remains accurate and easy to understand for non-technical readers. You can consider additional information {additional_info} if provided and is not related to explanation.
+  expected_output: >
+    A clean and well-structured markdown-formatted translation of the original content (should only return the translated content in markdown-formatted string only and should not include tasks_output) in this format:
+    ```markdown
+
+     structured translated content go here  
+    
+    ```
+    The language should feel natural, culturally appropriate, and accessible to the intended audience.
+    The translation should maintain the educational value of the original content while making it more relatable and engaging for the user.
