@@ -1,0 +1,32 @@
+2025-08-14 00:06:29 - VoiceAgent - INFO - logger.py:83 - info - Starting voice agent application
+2025-08-14 00:09:57 - VoiceAgent - INFO - logger.py:83 - info - Starting voice agent application
+2025-08-14 00:13:02 - VoiceAgent - INFO - logger.py:83 - info - Starting voice agent entrypoint
+2025-08-14 00:13:02 - VoiceAgent - DEBUG - logger.py:79 - debug - Extracting course info from room name: course-688a5d68c03ba096cd7a69a6-Parallel computing
+2025-08-14 00:13:02 - VoiceAgent - INFO - logger.py:83 - info - Using default course info (no specific course)
+2025-08-14 00:13:02 - VoiceAgent - INFO - logger.py:83 - info - Starting teaching session - Room: course-688a5d68c03ba096cd7a69a6-Parallel computing, Course: None (ID: None), User: anonymous
+2025-08-14 00:13:02 - VoiceAgent - INFO - logger.py:83 - info - Initializing TeacherAssistant for course: None (ID: None)
+2025-08-14 00:13:02 - VoiceAgent - DEBUG - logger.py:79 - debug - Loading prompts from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\prompts.yaml
+2025-08-14 00:13:02 - VoiceAgent - DEBUG - logger.py:79 - debug - Building teaching instructions from YAML config
+2025-08-14 00:13:02 - VoiceAgent - DEBUG - logger.py:79 - debug - Teaching instructions built successfully
+2025-08-14 00:13:02 - VoiceAgent - DEBUG - logger.py:79 - debug - TeacherAssistant initialized successfully
+2025-08-14 00:13:17 - VoiceAgent - INFO - logger.py:83 - info - Participant connected: Student
+2025-08-14 00:18:50 - VoiceAgent - INFO - logger.py:83 - info - Starting voice agent application
+2025-08-14 00:19:09 - VoiceAgent - INFO - logger.py:83 - info - Starting voice agent entrypoint
+2025-08-14 00:19:09 - VoiceAgent - DEBUG - logger.py:79 - debug - Extracting course info from room name: course-688a5d68c03ba096cd7a69a6-Parallel computing
+2025-08-14 00:19:09 - VoiceAgent - INFO - logger.py:83 - info - Using default course info (no specific course)
+2025-08-14 00:19:09 - VoiceAgent - INFO - logger.py:83 - info - Starting teaching session - Room: course-688a5d68c03ba096cd7a69a6-Parallel computing, Course: None (ID: None), User: anonymous
+2025-08-14 00:19:09 - VoiceAgent - INFO - logger.py:83 - info - Initializing TeacherAssistant for course: None (ID: None)
+2025-08-14 00:19:09 - VoiceAgent - DEBUG - logger.py:79 - debug - Loading prompts from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\prompts.yaml
+2025-08-14 00:19:09 - VoiceAgent - DEBUG - logger.py:79 - debug - Building teaching instructions from YAML config
+2025-08-14 00:19:09 - VoiceAgent - DEBUG - logger.py:79 - debug - Teaching instructions built successfully
+2025-08-14 00:19:09 - VoiceAgent - DEBUG - logger.py:79 - debug - TeacherAssistant initialized successfully
+2025-08-14 17:31:11 - VoiceAgent - INFO - logger.py:83 - info - Starting voice agent application
+2025-08-14 17:34:31 - VoiceAgent - INFO - logger.py:83 - info - Starting voice agent entrypoint
+2025-08-14 17:34:31 - VoiceAgent - DEBUG - logger.py:79 - debug - Extracting course info from room name: course-6898d0f5a08c06b90060950a-Parallel computing I
+2025-08-14 17:34:31 - VoiceAgent - INFO - logger.py:83 - info - Using default course info (no specific course)
+2025-08-14 17:34:31 - VoiceAgent - INFO - logger.py:83 - info - Starting teaching session - Room: course-6898d0f5a08c06b90060950a-Parallel computing I, Course: None (ID: None), User: anonymous
+2025-08-14 17:34:31 - VoiceAgent - INFO - logger.py:83 - info - Initializing TeacherAssistant for course: None (ID: None)
+2025-08-14 17:34:33 - VoiceAgent - DEBUG - logger.py:79 - debug - Loading prompts from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\prompts.yaml
+2025-08-14 17:34:33 - VoiceAgent - DEBUG - logger.py:79 - debug - Building teaching instructions from YAML config
+2025-08-14 17:34:33 - VoiceAgent - DEBUG - logger.py:79 - debug - Teaching instructions built successfully
+2025-08-14 17:34:33 - VoiceAgent - DEBUG - logger.py:79 - debug - TeacherAssistant initialized successfully

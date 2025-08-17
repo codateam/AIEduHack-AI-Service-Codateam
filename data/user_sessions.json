@@ -1,0 +1,45 @@
+{
+  "80b07266-717f-4457-ae0b-748a57980217": {
+    "session_id": "80b07266-717f-4457-ae0b-748a57980217",
+    "user_id": "demo_patient_001",
+    "room_name": "medical_demo_room",
+    "current_agent": "billing",
+    "context": {
+      "demo_mode": true,
+      "entry_time": "2025-01-11T23:45:00",
+      "current_agent": "triage",
+      "symptoms_mentioned": [
+        "general_concern"
+      ],
+      "urgency_assessed": false
+    },
+    "conversation_history": [
+      {
+        "timestamp": "2025-08-11T23:52:06.482688",
+        "role": "patient",
+        "message": "Hello, I need medical help",
+        "metadata": {}
+      },
+      {
+        "timestamp": "2025-08-11T23:52:06.485727",
+        "role": "triage_agent",
+        "message": "Hello! I'm here to help assess your medical needs.",
+        "metadata": {}
+      },
+      {
+        "timestamp": "2025-08-11T23:52:06.555535",
+        "role": "triage_agent",
+        "message": "Assessment: low urgency - Schedule a routine appointment",
+        "metadata": {
+          "assessment": {
+            "assessment_id": "d40aef98-3df8-4f50-a468-84a1aadf3ac6",
+            "patient_id": "80b07266-717f-4457-ae0b-748a57980217",
+            "symptoms": [
+              "headache",
+              "fatigue"
+            ],
+            "urgency_level": "low",
+            "recommended_action": "Schedule a routine appointment",
+            "recommended_department": "neurology",
+            "notes": "I have a mild headache and feel tired",
+            "created_at": 

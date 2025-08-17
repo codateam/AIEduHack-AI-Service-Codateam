@@ -1,0 +1,29 @@
+2025-08-12 19:54:55 - VoiceAgent - INFO - logger.py:83 - info - Starting voice agent application
+2025-08-12 21:28:24 - MedicalTools - ERROR - logger.py:91 - error - Error loading sessions: Expecting value: line 45 column 27 (char 1511)
+2025-08-12 21:28:40 - MedicalTools - ERROR - logger.py:91 - error - Error loading sessions: Expecting value: line 45 column 27 (char 1511)
+2025-08-12 21:28:49 - MedicalTools - ERROR - logger.py:91 - error - Error loading sessions: Expecting value: line 45 column 27 (char 1511)
+2025-08-12 21:57:41 - VoiceAgent - INFO - logger.py:83 - info - Starting voice agent entrypoint
+2025-08-12 21:57:41 - VoiceAgent - DEBUG - logger.py:79 - debug - Extracting course info from room name: course-6898d0f5a08c06b90060950a-Parallel computing I
+2025-08-12 21:57:41 - VoiceAgent - INFO - logger.py:83 - info - Using default course info (no specific course)
+2025-08-12 21:57:41 - VoiceAgent - INFO - logger.py:83 - info - Starting teaching session - Room: course-6898d0f5a08c06b90060950a-Parallel computing I, Course: None (ID: None), User: anonymous
+2025-08-12 21:57:41 - VoiceAgent - INFO - logger.py:83 - info - Initializing TeacherAssistant for course: None (ID: None)
+2025-08-12 21:57:41 - VoiceAgent - DEBUG - logger.py:79 - debug - Loading prompts from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\prompts.yaml
+2025-08-12 21:57:41 - VoiceAgent - DEBUG - logger.py:79 - debug - Building teaching instructions from YAML config
+2025-08-12 21:57:41 - VoiceAgent - DEBUG - logger.py:79 - debug - Teaching instructions built successfully
+2025-08-12 21:57:41 - VoiceAgent - DEBUG - logger.py:79 - debug - TeacherAssistant initialized successfully
+2025-08-12 21:57:43 - VoiceAgent - DEBUG - logger.py:79 - debug - Loading prompts from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\prompts.yaml
+2025-08-12 21:57:43 - VoiceAgent - DEBUG - logger.py:79 - debug - Sending greeting: Greet the student warmly and introduce yourself as their tutor. Ask what they'd like to explore or learn about today. Keep it brief and encouraging.
+2025-08-12 21:57:44 - VoiceAgent - INFO - logger.py:83 - info - Voice agent session started successfully
+2025-08-12 22:05:00 - VoiceAgent - INFO - logger.py:83 - info - Starting voice agent entrypoint
+2025-08-12 22:05:00 - VoiceAgent - DEBUG - logger.py:79 - debug - Extracting course info from room name: course-6898d0f5a08c06b90060950a-Parallel computing I
+2025-08-12 22:05:00 - VoiceAgent - INFO - logger.py:83 - info - Using default course info (no specific course)
+2025-08-12 22:05:00 - VoiceAgent - INFO - logger.py:83 - info - Starting teaching session - Room: course-6898d0f5a08c06b90060950a-Parallel computing I, Course: None (ID: None), User: anonymous
+2025-08-12 22:05:00 - VoiceAgent - INFO - logger.py:83 - info - Initializing TeacherAssistant for course: None (ID: None)
+2025-08-12 22:05:00 - VoiceAgent - DEBUG - logger.py:79 - debug - Loading prompts from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\prompts.yaml
+2025-08-12 22:05:00 - VoiceAgent - DEBUG - logger.py:79 - debug - Building teaching instructions from YAML config
+2025-08-12 22:05:00 - VoiceAgent - DEBUG - logger.py:79 - debug - Teaching instructions built successfully
+2025-08-12 22:05:00 - VoiceAgent - DEBUG - logger.py:79 - debug - TeacherAssistant initialized successfully
+2025-08-12 22:05:20 - VoiceAgent - DEBUG - logger.py:79 - debug - Loading prompts from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\prompts.yaml
+2025-08-12 22:05:20 - VoiceAgent - DEBUG - logger.py:79 - debug - Sending greeting: Greet the student warmly and introduce yourself as their tutor. Ask what they'd like to explore or learn about today. Keep it brief and encouraging.
+2025-08-12 22:05:23 - VoiceAgent - INFO - logger.py:83 - info - Voice agent session started successfully
+2025-08-12 22:27:27 - VoiceAgent - INFO - logger.py:83 - info - Starting voice agent application

@@ -102,3 +102,9 @@ websockets==15.0.1
 zipp==3.23.0
 zstandard==0.23.0
 crewai==0.150.0
+livekit-agents[google]~=1.0
+livekit-api==1.0.5
+livekit-agents[openai]~=1.2
+livekit-agents[cartesia]~=1.2
+livekit-agents[deepgram]~=1.2
+livekit-plugins-noise-cancellation~=0.2

@@ -91,11 +91,8 @@ class LearningRequest(BaseModel):
 
 class LearningResponse(BaseModel):
     content: str
-    # course_id: str
-    # subject: str
-    # difficulty: Literal["easy", "medium", "hard"]
-    # question_types: List[QuestionType]
-    # num_questions: int = Field(ge=1, le=100)
-    # llm_config: LLMConfig = LLMConfig()  # Default to local Ollama config
-    # additional_context: Optional[str] = None
-    # mark: int = 10  # Default points for each question
+    
+
+class GetTokenRequest(BaseModel):
+    room_name: str
+    user_name: str

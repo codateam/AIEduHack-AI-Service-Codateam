@@ -1,7 +1,22 @@
 from crewai import Crew, Process
 from utils.constant import GEMINI_API_KEY, GEMINI_MODEL
-from src.agents import tutor, translator, task1, task2
+# Import directly from the agents.py file using importlib
+import importlib.util
+import sys
+from pathlib import Path
 from utils.course_material_service import CourseMaterialService
+
+# Load the agents.py file directly
+agents_file_path = Path(__file__).parent / "agents.py"
+spec = importlib.util.spec_from_file_location("agents_module", agents_file_path)
+agents_module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(agents_module)
+
+# Get the specific items we need
+tutor = agents_module.tutor
+translator = agents_module.translator
+task1 = agents_module.task1
+task2 = agents_module.task2
 
 class LearningAIAgent:
     def __init__(self):
