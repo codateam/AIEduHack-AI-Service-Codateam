@@ -11,9 +11,9 @@ from utils.course_material_service import CourseMaterialService
 
 # Question Generator Service
 class QuestionGenerator:
-    def __init__(self, llm_client: LLMClient, course_material_service: CourseMaterialService = CourseMaterialService()):
+    def __init__(self, llm_client: LLMClient, course_material_service: CourseMaterialService = None):
         self.llm_client = llm_client
-        self.course_material_service = course_material_service
+        self.course_material_service = course_material_service or CourseMaterialService()
     
     async def generate_questions(self, request: QuestionRequest) -> List[GeneratedQuestion]:
         questions = []

@@ -2,6 +2,8 @@
 from dotenv import load_dotenv
 import os
 load_dotenv(dotenv_path='.env')
+from livekit import api
+from src.helpers import getToken
 
 # Now import everything else
 from fastapi import FastAPI, HTTPException
@@ -12,10 +14,19 @@ from utils.models import GeneratedQuestion, QuestionRequest, GradingRequest, Gra
 from utils.llm_client import LLMClient
 from utils.questions_generator import QuestionGenerator
 from utils.course_material_service import CourseMaterialService
+from utils.models import GetTokenRequest
+from utils.constant import LIVEKIT_API_KEY, LIVEKIT_API_SECRET
+
+
 from src.crew import LearningAIAgent
 from typing import List
 
+
 from fastapi import Form, Body
+from fastapi.middleware.cors import CORSMiddleware
+
+
+
 
 # Request/Response Models
 from utils.grading_service import GradingService
@@ -26,6 +37,15 @@ app = FastAPI(
     title="LLM Exam Question Generator and Grader API",
     description="Generate exam questions and grade answers using various LLM providers",
     version="1.0.0"
+)
+
+# CORS configuration
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods
+    allow_headers=["*"],  # Allows all headers
 )
 
 security = HTTPBearer(auto_error=False)
@@ -87,13 +107,19 @@ async def upload_multiple_course_material(course_id: str = Form(...), pdf_urls: 
 
 
 @app.post("/ai-teaching-agent")
-def run_crew_api(request: LearningRequest):
+async def run_crew_api(request: LearningRequest):
+
     try:
         crew_run = LearningAIAgent()
         result = crew_run.create_crew(request.lang, request.course_id, request.additional_info)
         return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to run crew: {str(e)}")
+
+@app.post("/generate-token")
+async def getJWTToken(request: GetTokenRequest):
+  token =  await getToken(request.room_name, request.user_name)
+  return {"token": token}
 
 
 @app.get("/supported-providers")

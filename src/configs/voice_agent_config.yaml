@@ -1,0 +1,26 @@
+voice_agent:
+  connection:
+    max_retries: 3
+    retry_delay: 1.0
+    timeout: 30.0
+    keepalive_interval: 10.0
+  
+  model:
+    name: "gemini-2.0-flash-exp"
+    voice: "Puck"
+    temperature: 0.7
+    max_tokens: 1000
+  
+  greeting:
+    delay_seconds: 1.0
+    fallback_delay_seconds: 2.0
+    max_attempts: 3
+  
+  session:
+    cleanup_interval: 300  # 5 minutes
+    max_session_duration: 3600  # 1 hour
+  
+  logging:
+    level: "INFO"
+    max_file_size: "10MB"
+    backup_count: 5

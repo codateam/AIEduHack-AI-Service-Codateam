@@ -1,0 +1,15 @@
+2025-08-11 23:49:47 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:50:33 - SessionManager - ERROR - logger.py:91 - error - Error loading sessions: Expecting value: line 74 column 27 (char 2341)
+2025-08-11 23:50:35 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:50:35 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:50:35 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:50:35 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:52:05 - SessionManager - ERROR - logger.py:91 - error - Error loading sessions: Expecting value: line 45 column 27 (char 1511)
+2025-08-11 23:52:06 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:52:06 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:52:06 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:52:06 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:52:06 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:52:06 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:52:06 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:52:06 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable

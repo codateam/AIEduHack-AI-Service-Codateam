@@ -1,0 +1,189 @@
+2025-08-11 18:50:32 - VoiceAgent - INFO - logger.py:83 - info - Starting voice agent application
+2025-08-11 18:53:58 - VoiceAgent - INFO - logger.py:83 - info - Starting voice agent entrypoint
+2025-08-11 18:53:58 - VoiceAgent - DEBUG - logger.py:79 - debug - Extracting course info from room name: course-6898d0f5a08c06b90060950a-Parallel computing I
+2025-08-11 18:53:58 - VoiceAgent - INFO - logger.py:83 - info - Using default course info (no specific course)
+2025-08-11 18:53:58 - VoiceAgent - INFO - logger.py:83 - info - Starting teaching session - Room: course-6898d0f5a08c06b90060950a-Parallel computing I, Course: None (ID: None), User: anonymous
+2025-08-11 18:53:58 - VoiceAgent - INFO - logger.py:83 - info - Initializing TeacherAssistant for course: None (ID: None)
+2025-08-11 18:54:00 - VoiceAgent - DEBUG - logger.py:79 - debug - Loading prompts from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\prompts.yaml
+2025-08-11 18:54:00 - VoiceAgent - DEBUG - logger.py:79 - debug - Building teaching instructions from YAML config
+2025-08-11 18:54:00 - VoiceAgent - DEBUG - logger.py:79 - debug - Teaching instructions built successfully
+2025-08-11 18:54:00 - VoiceAgent - DEBUG - logger.py:79 - debug - TeacherAssistant initialized successfully
+2025-08-11 18:54:06 - VoiceAgent - DEBUG - logger.py:79 - debug - Loading prompts from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\prompts.yaml
+2025-08-11 18:54:06 - VoiceAgent - DEBUG - logger.py:79 - debug - Sending greeting: Greet the student warmly and introduce yourself as their tutor. Ask what they'd like to explore or learn about today. Keep it brief and encouraging.
+2025-08-11 18:54:09 - VoiceAgent - INFO - logger.py:83 - info - Voice agent session started successfully
+2025-08-11 19:02:25 - VoiceAgent - INFO - logger.py:83 - info - Starting voice agent entrypoint
+2025-08-11 19:02:25 - VoiceAgent - DEBUG - logger.py:79 - debug - Extracting course info from room name: course-6898d0f5a08c06b90060950a-Parallel computing I
+2025-08-11 19:02:25 - VoiceAgent - INFO - logger.py:83 - info - Using default course info (no specific course)
+2025-08-11 19:02:25 - VoiceAgent - INFO - logger.py:83 - info - Starting teaching session - Room: course-6898d0f5a08c06b90060950a-Parallel computing I, Course: None (ID: None), User: anonymous
+2025-08-11 19:02:25 - VoiceAgent - INFO - logger.py:83 - info - Initializing TeacherAssistant for course: None (ID: None)
+2025-08-11 19:02:25 - VoiceAgent - DEBUG - logger.py:79 - debug - Loading prompts from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\prompts.yaml
+2025-08-11 19:02:25 - VoiceAgent - DEBUG - logger.py:79 - debug - Building teaching instructions from YAML config
+2025-08-11 19:02:25 - VoiceAgent - DEBUG - logger.py:79 - debug - Teaching instructions built successfully
+2025-08-11 19:02:25 - VoiceAgent - DEBUG - logger.py:79 - debug - TeacherAssistant initialized successfully
+2025-08-11 19:02:27 - VoiceAgent - DEBUG - logger.py:79 - debug - Loading prompts from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\prompts.yaml
+2025-08-11 19:02:27 - VoiceAgent - DEBUG - logger.py:79 - debug - Sending greeting: Greet the student warmly and introduce yourself as their tutor. Ask what they'd like to explore or learn about today. Keep it brief and encouraging.
+2025-08-11 19:02:27 - VoiceAgent - INFO - logger.py:83 - info - Voice agent session started successfully
+2025-08-11 20:02:04 - VoiceAgent - INFO - logger.py:83 - info - Starting voice agent application
+2025-08-11 22:45:22 - VoiceAgent - INFO - logger.py:83 - info - Starting voice agent application
+2025-08-11 22:45:29 - VoiceAgent - INFO - logger.py:83 - info - Starting voice agent entrypoint
+2025-08-11 22:45:29 - VoiceAgent - DEBUG - logger.py:79 - debug - Extracting course info from room name: course-6898d0f5a08c06b90060950a-Parallel computing I
+2025-08-11 22:45:29 - VoiceAgent - INFO - logger.py:83 - info - Using default course info (no specific course)
+2025-08-11 22:45:29 - VoiceAgent - INFO - logger.py:83 - info - Starting teaching session - Room: course-6898d0f5a08c06b90060950a-Parallel computing I, Course: None (ID: None), User: anonymous
+2025-08-11 22:45:29 - VoiceAgent - INFO - logger.py:83 - info - Initializing TeacherAssistant for course: None (ID: None)
+2025-08-11 22:45:29 - VoiceAgent - DEBUG - logger.py:79 - debug - Loading prompts from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\prompts.yaml
+2025-08-11 22:45:29 - VoiceAgent - DEBUG - logger.py:79 - debug - Building teaching instructions from YAML config
+2025-08-11 22:45:29 - VoiceAgent - DEBUG - logger.py:79 - debug - Teaching instructions built successfully
+2025-08-11 22:45:29 - VoiceAgent - DEBUG - logger.py:79 - debug - TeacherAssistant initialized successfully
+2025-08-11 22:45:32 - VoiceAgent - DEBUG - logger.py:79 - debug - Loading prompts from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\prompts.yaml
+2025-08-11 22:45:32 - VoiceAgent - DEBUG - logger.py:79 - debug - Sending greeting: Greet the student warmly and introduce yourself as their tutor. Ask what they'd like to explore or learn about today. Keep it brief and encouraging.
+2025-08-11 22:45:32 - VoiceAgent - INFO - logger.py:83 - info - Voice agent session started successfully
+2025-08-11 23:42:29 - MedicalTools - DEBUG - logger.py:79 - debug - Saved 1 sessions to data\user_sessions.json
+2025-08-11 23:42:29 - MedicalTools - INFO - logger.py:83 - info - Created new session e26a7eea-da70-43ed-9453-3ab80b3af435 for user test_patient_123
+2025-08-11 23:42:29 - MedicalTools - DEBUG - logger.py:79 - debug - Saved 1 sessions to data\user_sessions.json
+2025-08-11 23:42:29 - MedicalTools - DEBUG - logger.py:79 - debug - Added conversation entry to session e26a7eea-da70-43ed-9453-3ab80b3af435
+2025-08-11 23:42:29 - MedicalTools - DEBUG - logger.py:79 - debug - Saved 1 sessions to data\user_sessions.json
+2025-08-11 23:42:29 - MedicalTools - DEBUG - logger.py:79 - debug - Added conversation entry to session e26a7eea-da70-43ed-9453-3ab80b3af435
+2025-08-11 23:42:29 - MedicalTools - DEBUG - logger.py:79 - debug - Saved 1 sessions to data\user_sessions.json
+2025-08-11 23:42:29 - MedicalTools - DEBUG - logger.py:79 - debug - Updated context for session e26a7eea-da70-43ed-9453-3ab80b3af435
+2025-08-11 23:42:29 - MedicalTools - INFO - logger.py:83 - info - Initializing MedicalConsultationAgent for user: test_patient_456, room: test_medical_room
+2025-08-11 23:42:29 - MedicalTools - INFO - logger.py:83 - info - Initializing MedicalConsultationAgent for user: test_patient_789, room: test_transfer_room
+2025-08-11 23:42:29 - MedicalTools - INFO - logger.py:83 - info - Initializing MedicalConsultationAgent for user: test_patient_101, room: test_input_room
+2025-08-11 23:42:29 - MedicalTools - INFO - logger.py:83 - info - Initializing TriageAgent
+2025-08-11 23:42:29 - MedicalTools - DEBUG - logger.py:79 - debug - Loading agents config from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\medical_agents.yaml
+2025-08-11 23:42:29 - MedicalTools - DEBUG - logger.py:79 - debug - Loading prompts config from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\medical_prompts.yaml
+2025-08-11 23:42:29 - MedicalTools - DEBUG - logger.py:79 - debug - TriageAgent initialized successfully
+2025-08-11 23:42:29 - MedicalTools - DEBUG - logger.py:79 - debug - Calling function: assess_patient_symptoms
+2025-08-11 23:42:29 - MedicalTools - DEBUG - logger.py:79 - debug - Starting operation: function assess_patient_symptoms
+2025-08-11 23:42:29 - MedicalTools - INFO - logger.py:83 - info - Operation 'function assess_patient_symptoms' completed in 0.00s
+2025-08-11 23:42:29 - MedicalTools - DEBUG - logger.py:79 - debug - Function assess_patient_symptoms completed successfully
+2025-08-11 23:49:46 - SessionManager - INFO - logger.py:83 - info - Loaded 1 sessions from data\user_sessions.json
+2025-08-11 23:49:47 - SessionManager - DEBUG - logger.py:79 - debug - Saved 2 sessions to data\user_sessions.json
+2025-08-11 23:49:47 - SessionManager - INFO - logger.py:83 - info - Created new session 0ea62070-136b-4985-8c78-a51342994eb3 for user demo_patient_001
+2025-08-11 23:49:47 - SessionManager - DEBUG - logger.py:79 - debug - Saved 2 sessions to data\user_sessions.json
+2025-08-11 23:49:47 - SessionManager - DEBUG - logger.py:79 - debug - Added conversation entry to session 0ea62070-136b-4985-8c78-a51342994eb3
+2025-08-11 23:49:47 - SessionManager - DEBUG - logger.py:79 - debug - Saved 2 sessions to data\user_sessions.json
+2025-08-11 23:49:47 - SessionManager - DEBUG - logger.py:79 - debug - Added conversation entry to session 0ea62070-136b-4985-8c78-a51342994eb3
+2025-08-11 23:49:47 - SessionManager - DEBUG - logger.py:79 - debug - Saved 2 sessions to data\user_sessions.json
+2025-08-11 23:49:47 - SessionManager - DEBUG - logger.py:79 - debug - Updated context for session 0ea62070-136b-4985-8c78-a51342994eb3
+2025-08-11 23:49:47 - SessionManager - INFO - logger.py:83 - info - Initializing TriageAgent
+2025-08-11 23:49:47 - SessionManager - DEBUG - logger.py:79 - debug - Loading agents config from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\medical_agents.yaml
+2025-08-11 23:49:47 - SessionManager - DEBUG - logger.py:79 - debug - Loading prompts config from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\medical_prompts.yaml
+2025-08-11 23:49:47 - SessionManager - DEBUG - logger.py:79 - debug - Saved 2 sessions to data\user_sessions.json
+2025-08-11 23:49:47 - SessionManager - DEBUG - logger.py:79 - debug - Updated session 0ea62070-136b-4985-8c78-a51342994eb3
+2025-08-11 23:49:47 - SessionManager - DEBUG - logger.py:79 - debug - TriageAgent initialized successfully
+2025-08-11 23:49:47 - SessionManager - DEBUG - logger.py:79 - debug - Calling function: assess_patient_symptoms
+2025-08-11 23:49:47 - SessionManager - DEBUG - logger.py:79 - debug - Starting operation: function assess_patient_symptoms
+2025-08-11 23:49:47 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:49:47 - SessionManager - DEBUG - logger.py:79 - debug - Added conversation entry to session 0ea62070-136b-4985-8c78-a51342994eb3
+2025-08-11 23:49:47 - SessionManager - INFO - logger.py:83 - info - Operation 'function assess_patient_symptoms' completed in 0.00s
+2025-08-11 23:49:47 - SessionManager - DEBUG - logger.py:79 - debug - Function assess_patient_symptoms completed successfully
+2025-08-11 23:50:33 - SessionManager - ERROR - logger.py:91 - error - Error loading sessions: Expecting value: line 74 column 27 (char 2341)
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Saved 1 sessions to data\user_sessions.json
+2025-08-11 23:50:35 - SessionManager - INFO - logger.py:83 - info - Created new session c6c41833-cde8-421f-bb41-80c765c51ff2 for user demo_patient_001
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Saved 1 sessions to data\user_sessions.json
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Added conversation entry to session c6c41833-cde8-421f-bb41-80c765c51ff2
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Saved 1 sessions to data\user_sessions.json
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Added conversation entry to session c6c41833-cde8-421f-bb41-80c765c51ff2
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Saved 1 sessions to data\user_sessions.json
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Updated context for session c6c41833-cde8-421f-bb41-80c765c51ff2
+2025-08-11 23:50:35 - SessionManager - INFO - logger.py:83 - info - Initializing TriageAgent
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Loading agents config from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\medical_agents.yaml
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Loading prompts config from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\medical_prompts.yaml
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Saved 1 sessions to data\user_sessions.json
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Updated session c6c41833-cde8-421f-bb41-80c765c51ff2
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - TriageAgent initialized successfully
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Calling function: assess_patient_symptoms
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Starting operation: function assess_patient_symptoms
+2025-08-11 23:50:35 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Added conversation entry to session c6c41833-cde8-421f-bb41-80c765c51ff2
+2025-08-11 23:50:35 - SessionManager - INFO - logger.py:83 - info - Operation 'function assess_patient_symptoms' completed in 0.00s
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Function assess_patient_symptoms completed successfully
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Calling function: assess_patient_symptoms
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Starting operation: function assess_patient_symptoms
+2025-08-11 23:50:35 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Added conversation entry to session c6c41833-cde8-421f-bb41-80c765c51ff2
+2025-08-11 23:50:35 - SessionManager - INFO - logger.py:83 - info - Operation 'function assess_patient_symptoms' completed in 0.00s
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Function assess_patient_symptoms completed successfully
+2025-08-11 23:50:35 - SessionManager - INFO - logger.py:83 - info - Initializing SupportAgent
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Loading agents config from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\medical_agents.yaml
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Loading prompts config from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\medical_prompts.yaml
+2025-08-11 23:50:35 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Updated session c6c41833-cde8-421f-bb41-80c765c51ff2
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - SupportAgent initialized successfully
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Calling function: schedule_appointment
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Starting operation: function schedule_appointment
+2025-08-11 23:50:35 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Added conversation entry to session c6c41833-cde8-421f-bb41-80c765c51ff2
+2025-08-11 23:50:35 - SessionManager - INFO - logger.py:83 - info - Operation 'function schedule_appointment' completed in 0.00s
+2025-08-11 23:50:35 - SessionManager - DEBUG - logger.py:79 - debug - Function schedule_appointment completed successfully
+2025-08-11 23:52:05 - SessionManager - ERROR - logger.py:91 - error - Error loading sessions: Expecting value: line 45 column 27 (char 1511)
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Saved 1 sessions to data\user_sessions.json
+2025-08-11 23:52:06 - SessionManager - INFO - logger.py:83 - info - Created new session 80b07266-717f-4457-ae0b-748a57980217 for user demo_patient_001
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Saved 1 sessions to data\user_sessions.json
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Added conversation entry to session 80b07266-717f-4457-ae0b-748a57980217
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Saved 1 sessions to data\user_sessions.json
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Added conversation entry to session 80b07266-717f-4457-ae0b-748a57980217
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Saved 1 sessions to data\user_sessions.json
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Updated context for session 80b07266-717f-4457-ae0b-748a57980217
+2025-08-11 23:52:06 - SessionManager - INFO - logger.py:83 - info - Initializing TriageAgent
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Loading agents config from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\medical_agents.yaml
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Loading prompts config from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\medical_prompts.yaml
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Saved 1 sessions to data\user_sessions.json
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Updated session 80b07266-717f-4457-ae0b-748a57980217
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - TriageAgent initialized successfully
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Calling function: assess_patient_symptoms
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Starting operation: function assess_patient_symptoms
+2025-08-11 23:52:06 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Added conversation entry to session 80b07266-717f-4457-ae0b-748a57980217
+2025-08-11 23:52:06 - SessionManager - INFO - logger.py:83 - info - Operation 'function assess_patient_symptoms' completed in 0.00s
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Function assess_patient_symptoms completed successfully
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Calling function: assess_patient_symptoms
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Starting operation: function assess_patient_symptoms
+2025-08-11 23:52:06 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Added conversation entry to session 80b07266-717f-4457-ae0b-748a57980217
+2025-08-11 23:52:06 - SessionManager - INFO - logger.py:83 - info - Operation 'function assess_patient_symptoms' completed in 0.01s
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Function assess_patient_symptoms completed successfully
+2025-08-11 23:52:06 - SessionManager - INFO - logger.py:83 - info - Initializing SupportAgent
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Loading agents config from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\medical_agents.yaml
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Loading prompts config from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\medical_prompts.yaml
+2025-08-11 23:52:06 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Updated session 80b07266-717f-4457-ae0b-748a57980217
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - SupportAgent initialized successfully
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Calling function: schedule_appointment
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Starting operation: function schedule_appointment
+2025-08-11 23:52:06 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Added conversation entry to session 80b07266-717f-4457-ae0b-748a57980217
+2025-08-11 23:52:06 - SessionManager - INFO - logger.py:83 - info - Operation 'function schedule_appointment' completed in 0.00s
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Function schedule_appointment completed successfully
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Calling function: recommend_professional
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Starting operation: function recommend_professional
+2025-08-11 23:52:06 - SessionManager - INFO - logger.py:83 - info - Operation 'function recommend_professional' completed in 0.00s
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Function recommend_professional completed successfully
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Calling function: handle_prescription_refill
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Starting operation: function handle_prescription_refill
+2025-08-11 23:52:06 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Added conversation entry to session 80b07266-717f-4457-ae0b-748a57980217
+2025-08-11 23:52:06 - SessionManager - INFO - logger.py:83 - info - Operation 'function handle_prescription_refill' completed in 0.01s
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Function handle_prescription_refill completed successfully
+2025-08-11 23:52:06 - SessionManager - INFO - logger.py:83 - info - Initializing BillingAgent
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Loading agents config from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\medical_agents.yaml
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Loading prompts config from C:\Users\Hp\Documents\project\proof-of-concepts\aieduhackerton\aieduhackerton-ai\src\configs\medical_prompts.yaml
+2025-08-11 23:52:06 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Updated session 80b07266-717f-4457-ae0b-748a57980217
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - BillingAgent initialized successfully
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Calling function: manage_subscription
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Starting operation: function manage_subscription
+2025-08-11 23:52:06 - SessionManager - INFO - logger.py:83 - info - Operation 'function manage_subscription' completed in 0.00s
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Function manage_subscription completed successfully
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Calling function: process_payment
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Starting operation: function process_payment
+2025-08-11 23:52:06 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Added conversation entry to session 80b07266-717f-4457-ae0b-748a57980217
+2025-08-11 23:52:06 - SessionManager - INFO - logger.py:83 - info - Operation 'function process_payment' completed in 0.01s
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Function process_payment completed successfully
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Calling function: manage_subscription
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Starting operation: function manage_subscription
+2025-08-11 23:52:06 - SessionManager - ERROR - logger.py:91 - error - Error saving sessions: Object of type datetime is not JSON serializable
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Added conversation entry to session 80b07266-717f-4457-ae0b-748a57980217
+2025-08-11 23:52:06 - SessionManager - INFO - logger.py:83 - info - Operation 'function manage_subscription' completed in 0.00s
+2025-08-11 23:52:06 - SessionManager - DEBUG - logger.py:79 - debug - Function manage_subscription completed successfully
