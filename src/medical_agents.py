@@ -4,21 +4,28 @@ from pathlib import Path
 import yaml
 from typing import Dict, Any, Optional, List
 from datetime import datetime, date
-
+from dataclasses import dataclass
 # Add the project root directory to Python path
-project_root = Path(__file__).parent.parent.parent
+project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
 from livekit.agents import Agent
-from ..models.medical_models import (
-    UrgencyLevel, TriageResponse, SupportResponse, BillingResponse,
-    AppointmentRequest, PrescriptionRefillRequest, SubscriptionType
-)
-from ..tools.medical_tools import TriageTools, SupportTools, BillingTools
-from ..services.session_manager import session_manager
-from utils.logger import get_logger, log_function_call
+from medical_models import UrgencyLevel, TriageResponse, SupportResponse, BillingResponse, AppointmentRequest, PrescriptionRefillRequest, SubscriptionType
 
-logger = get_logger("MedicalAgents")
+from medical_tools import TriageTools, SupportTools, BillingTools
+from session_manager import session_manager
+from utils.logger import logger
+
+
+@dataclass
+class UserSessionInfo:
+    name: str
+    email: str
+    
+
+
+
+
 
 def load_medical_config(config_type: str):
     """Load medical configuration from YAML files"""
@@ -80,7 +87,6 @@ class TriageAgent(Agent):
         
         return instructions
     
-    @log_function_call()
     def assess_patient_symptoms(self, symptoms: List[str], additional_info: str = "") -> TriageResponse:
         """Assess patient symptoms and determine next steps"""
         try:
@@ -191,7 +197,7 @@ class SupportAgent(Agent):
         
         return instructions
     
-    @log_function_call()
+
     def schedule_appointment(self, patient_id: str, preferred_date: date, 
                            appointment_type: str, department: str = None, 
                            reason: str = "", urgency: str = "low") -> SupportResponse:
@@ -247,7 +253,6 @@ class SupportAgent(Agent):
                 requires_human_intervention=True
             )
     
-    @log_function_call()
     def handle_prescription_refill(self, patient_id: str, medication_name: str, 
                                  pharmacy: str = None) -> SupportResponse:
         """Handle prescription refill request"""
@@ -299,7 +304,6 @@ class SupportAgent(Agent):
                 requires_human_intervention=True
             )
     
-    @log_function_call()
     def recommend_professional(self, department: str, date_needed: date = None) -> SupportResponse:
         """Recommend healthcare professionals"""
         try:
@@ -386,7 +390,7 @@ class BillingAgent(Agent):
         
         return instructions
     
-    @log_function_call()
+
     def manage_subscription(self, user_id: str, action: str, subscription_type: str = None) -> BillingResponse:
         """Manage user subscriptions"""
         try:
@@ -448,7 +452,7 @@ class BillingAgent(Agent):
                 requires_human_intervention=True
             )
     
-    @log_function_call()
+
     def process_payment(self, user_id: str, amount: float, payment_method: str, description: str = "") -> BillingResponse:
         """Process a payment"""
         try:

@@ -42,4 +42,13 @@
             "recommended_action": "Schedule a routine appointment",
             "recommended_department": "neurology",
             "notes": "I have a mild headache and feel tired",
-            "created_at": 
+            "created_at": "2025-08-11T23:52:06.555535"
+          }
+        }
+      }
+    ],
+    "session_status": "completed",
+    "created_at": "2025-08-11T23:52:06.482688",
+    "updated_at": "2025-08-11T23:52:06.555535"
+  }
+}

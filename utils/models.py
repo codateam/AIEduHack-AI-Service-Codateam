@@ -1,97 +1,215 @@
-from pydantic import BaseModel, Field 
+from pydantic import BaseModel, Field
 from typing import List, Dict, Any, Optional, Literal
 from enum import Enum
+from datetime import datetime, date, time
+import uuid
 
-# Configuration Models
-class LLMProvider(str, Enum):
-    ANTHROPIC = "anthropic"
-    OPENAI = "openai"
-    GEMINI = "gemini"
-    DEEPSEEK = "deepseek"
-    LOCAL_OLLAMA = "local_ollama"
-    LOCAL_LLAMACPP = "local_llamacpp"
+# Enums for medical system
+class UrgencyLevel(str, Enum):
+    LOW = "low"
+    MEDIUM = "medium"
+    HIGH = "high"
+    EMERGENCY = "emergency"
 
-class QuestionType(str, Enum):
-    MCQ = "mcq"
-    GERMAN = "fill-in-the-blank" # German questions
-    THEORY = "essay"
+class AppointmentType(str, Enum):
+    CONSULTATION = "consultation"
+    FOLLOW_UP = "follow_up"
+    PROCEDURE = "procedure"
+    EMERGENCY = "emergency"
+    TELEMEDICINE = "telemedicine"
 
+class AppointmentStatus(str, Enum):
+    SCHEDULED = "scheduled"
+    CONFIRMED = "confirmed"
+    CANCELLED = "cancelled"
+    COMPLETED = "completed"
+    NO_SHOW = "no_show"
 
-# class LLMConfig(BaseModel):
-#     provider: LLMProvider = LLMProvider.LOCAL_OLLAMA 
-#     api_key: Optional[str] = None
-#     base_url: Optional[str] = None  # For local LLMs
-#     model_name: str= "gemma3:latest"  # Default model for local LLMs
-#     temperature: float = 0.7
-#     max_tokens: int = 
+class PrescriptionStatus(str, Enum):
+    PENDING = "pending"
+    APPROVED = "approved"
+    READY = "ready"
+    DISPENSED = "dispensed"
+    CANCELLED = "cancelled"
 
-class LLMConfig(BaseModel):
-    provider: LLMProvider = LLMProvider.GEMINI
-    model_name: str= "gemini-2.5-flash"  # Default model for local LLMs
-    temperature: float = 0.7
-    max_tokens: int = 20000
+class SubscriptionType(str, Enum):
+    BASIC = "basic"
+    PREMIUM = "premium"
+    FAMILY = "family"
+    CORPORATE = "corporate"
 
+class SubscriptionStatus(str, Enum):
+    ACTIVE = "active"
+    INACTIVE = "inactive"
+    SUSPENDED = "suspended"
+    CANCELLED = "cancelled"
 
-class MCQOption(BaseModel):
-    option: str
-    is_correct: bool
+class PaymentStatus(str, Enum):
+    PENDING = "pending"
+    PAID = "paid"
+    FAILED = "failed"
+    REFUNDED = "refunded"
 
-class QuestionRequest(BaseModel):
-    # topic: str
-    course_id: str
-    subject: str
-    difficulty: Literal["easy", "medium", "hard"]
-    question_types: List[QuestionType]
-    num_questions: int = Field(ge=1, le=100)
-    llm_config: LLMConfig
-    additional_context: Optional[str] = None
-    mark: int = 10  # Default points for each question
+# Base Models
+class BaseUser(BaseModel):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    first_name: str
+    last_name: str
+    email: str
+    phone: str
+    created_at: datetime = Field(default_factory=datetime.now)
+    updated_at: datetime = Field(default_factory=datetime.now)
 
-class GeneratedQuestion(BaseModel):
-    id: str
-    type: QuestionType
-    question: str
-    options: Optional[List[MCQOption]] = None  # Only for MCQ
-    expected_answer: Optional[str] = None  # For German and Theory
-    mark: int = 10
-    metadata: Dict[str, Any] = {}
+class Patient(BaseUser):
+    date_of_birth: date
+    gender: Optional[str] = None
+    address: Optional[str] = None
+    emergency_contact: Optional[str] = None
+    insurance_info: Optional[Dict[str, Any]] = None
+    medical_history: Optional[List[str]] = []
+    allergies: Optional[List[str]] = []
+    current_medications: Optional[List[str]] = []
 
-class GradingRequest(BaseModel):
-    id: str
-    question: str
-    course_id: str
-    expected_answer: str
-    student_answer: str
-    type: QuestionType
-    points: int = 10
-    llm_config: LLMConfig = LLMConfig()  # Default to local Ollama config
+class HealthcareProfessional(BaseUser):
+    specialization: str
+    license_number: str
+    department: str
+    availability: Optional[Dict[str, Any]] = None
+    consultation_fee: Optional[float] = None
 
-class GradingResult(BaseModel):
-    question_id: str
-    score: float
-    max_score: float
-    percentage: float
-    feedback: str
-    detailed_analysis: Dict[str, Any]
+# Session and Interaction Models
+class UserSession(BaseModel):
+    session_id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    user_id: str
+    room_name: str
+    current_agent: Optional[str] = None
+    context: Dict[str, Any] = {}
+    conversation_history: List[Dict[str, Any]] = []
+    created_at: datetime = Field(default_factory=datetime.now)
+    last_activity: datetime = Field(default_factory=datetime.now)
 
-class BatchGradingRequest(BaseModel):
-    answers: List[GradingRequest]
+class TriageAssessment(BaseModel):
+    assessment_id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    patient_id: str
+    symptoms: List[str]
+    urgency_level: UrgencyLevel
+    recommended_action: str
+    recommended_department: Optional[str] = None
+    notes: Optional[str] = None
+    created_at: datetime = Field(default_factory=datetime.now)
 
-class LearningRequest(BaseModel):
-    lang: str
-    # context: str
-    course_id: str
-    additional_info: Optional[str] = None
-    # subject: str
-    # difficulty: Literal["easy", "medium", "hard"]
-    # question_types: List[QuestionType]
-    # num_questions: int = Field(ge=1, le=100)
-    # llm_config: LLMConfig = LLMConfig()  # Default to local Ollama config
-    # mark: int = 10  # Default points for each question
+# Appointment Models
+class AppointmentRequest(BaseModel):
+    patient_id: str
+    preferred_date: date
+    preferred_time: Optional[time] = None
+    appointment_type: AppointmentType
+    department: Optional[str] = None
+    doctor_id: Optional[str] = None
+    reason: str
+    urgency_level: UrgencyLevel = UrgencyLevel.LOW
+    notes: Optional[str] = None
 
-class LearningResponse(BaseModel):
-    content: str
-    
+class Appointment(BaseModel):
+    appointment_id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    patient_id: str
+    doctor_id: str
+    appointment_date: datetime
+    appointment_type: AppointmentType
+    status: AppointmentStatus = AppointmentStatus.SCHEDULED
+    department: str
+    reason: str
+    notes: Optional[str] = None
+    created_at: datetime = Field(default_factory=datetime.now)
+    updated_at: datetime = Field(default_factory=datetime.now)
+
+# Prescription Models
+class PrescriptionRefillRequest(BaseModel):
+    patient_id: str
+    medication_name: str
+    current_prescription_id: Optional[str] = None
+    pharmacy_preference: Optional[str] = None
+    notes: Optional[str] = None
+
+class Prescription(BaseModel):
+    prescription_id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    patient_id: str
+    doctor_id: str
+    medication_name: str
+    dosage: str
+    quantity: int
+    refills_remaining: int
+    status: PrescriptionStatus = PrescriptionStatus.PENDING
+    pharmacy: Optional[str] = None
+    created_at: datetime = Field(default_factory=datetime.now)
+    expires_at: Optional[datetime] = None
+
+# Billing and Subscription Models
+class Subscription(BaseModel):
+    subscription_id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    user_id: str
+    subscription_type: SubscriptionType
+    status: SubscriptionStatus = SubscriptionStatus.ACTIVE
+    start_date: date
+    end_date: Optional[date] = None
+    monthly_fee: float
+    features: List[str] = []
+    created_at: datetime = Field(default_factory=datetime.now)
+
+class Payment(BaseModel):
+    payment_id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    user_id: str
+    subscription_id: Optional[str] = None
+    amount: float
+    payment_method: str
+    status: PaymentStatus = PaymentStatus.PENDING
+    transaction_date: datetime = Field(default_factory=datetime.now)
+    description: Optional[str] = None
+
+class BillingInquiry(BaseModel):
+    inquiry_id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    user_id: str
+    inquiry_type: Literal["subscription", "payment", "refund", "general"]
+    description: str
+    status: Literal["open", "in_progress", "resolved"] = "open"
+    created_at: datetime = Field(default_factory=datetime.now)
+
+# Agent Response Models
+class AgentResponse(BaseModel):
+    agent_type: Literal["triage", "support", "billing"]
+    message: str
+    actions_taken: List[str] = []
+    next_steps: Optional[str] = None
+    requires_human_intervention: bool = False
+    confidence_score: Optional[float] = None
+
+class TriageResponse(AgentResponse):
+    agent_type: Literal["triage"] = "triage"
+    urgency_assessment: UrgencyLevel
+    recommended_department: Optional[str] = None
+    should_transfer: bool = False
+    transfer_to: Optional[Literal["support", "billing", "emergency"]] = None
+
+class SupportResponse(AgentResponse):
+    agent_type: Literal["support"] = "support"
+    appointment_scheduled: Optional[str] = None
+    prescription_processed: Optional[str] = None
+    professional_recommended: Optional[str] = None
+
+class BillingResponse(AgentResponse):
+    agent_type: Literal["billing"] = "billing"
+    subscription_updated: Optional[str] = None
+    payment_processed: Optional[str] = None
+    billing_issue_resolved: Optional[str] = None
+
+# Tool Function Models
+class ToolCall(BaseModel):
+    tool_name: str
+    parameters: Dict[str, Any]
+    result: Optional[Any] = None
+    success: bool = False
+    error_message: Optional[str] = None
+    executed_at: datetime = Field(default_factory=datetime.now)
 
 class GetTokenRequest(BaseModel):
     room_name: str

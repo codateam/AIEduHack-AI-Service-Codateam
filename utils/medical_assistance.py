@@ -1,4 +1,5 @@
 import os
+import yaml
 from livekit.agents import Agent, AgentSession, ChatContext, function_tool, get_job_context, RunContext, JobContext, WorkerOptions, cli
 # from livekit.plugins import cartesia
 from dataclasses import dataclass
@@ -18,12 +19,34 @@ class MedicalSessionInfo:
     symptoms: list[str] = None
     medical_history: str | None = None
     emergency_level: str | None = None  # "low", "medium", "high", "emergency"
+    recommended_specialty: str | None = None
+    specialty_confidence: str | None = None  # "high", "medium", "low"
     
     def __post_init__(self):
         if self.symptoms is None:
             self.symptoms = []
 
 RunContext_T = RunContext[MedicalSessionInfo]
+
+# Load specialty configuration
+def load_specialty_config():
+    """Load specialty determination configuration from YAML file"""
+    config_path = os.path.join(os.path.dirname(__file__), '..', 'src', 'configs', 'specialty_prompts.yaml')
+    try:
+        with open(config_path, 'r', encoding='utf-8') as file:
+            return yaml.safe_load(file)
+    except FileNotFoundError:
+        # Fallback configuration if file not found
+        return {
+            'specialty_determination': {
+                'specialties': {
+                    'general_medicine': {
+                        'name': 'General Medicine',
+                        'description': 'General health concerns and preventive care'
+                    }
+                }
+            }
+        }
 
 
 class ConsentCollectorAgent(Agent):
@@ -127,7 +150,7 @@ class TriageAgent(Agent):
             or low (routine appointment).""",
             chat_ctx=chat_ctx,
             # Use a different voice for the triage specialist
-            # tts=cartesia.TTS(voice="6f84f4b8-58a2-430c-8c79-688dad597532")
+            tts=cartesia.TTS(voice="6f84f4b8-58a2-430c-8c79-688dad597532")
         )
 
     async def on_enter(self) -> None:
@@ -168,9 +191,138 @@ class TriageAgent(Agent):
         else:
             await self.session.say(
                 f"I've assessed your condition as {level} priority. {reasoning} "
-                "Let me connect you with our care coordinator."
+                "Now let me connect you with our specialty determination specialist."
             )
-            return CareCoordinatorAgent()
+            return SpecialtyDeterminationAgent()
+
+class SpecialtyDeterminationAgent(Agent):
+    """Agent that helps determine the appropriate medical specialty based on symptoms"""
+    
+    def __init__(self, chat_ctx: ChatContext = None):
+        # Load specialty configuration
+        self.specialty_config = load_specialty_config()['specialty_determination']
+        
+        super().__init__(
+            instructions=f"""You are a medical specialty determination specialist. Your role is to:
+            1. Analyze patient symptoms and medical history
+            2. Ask targeted questions to clarify symptoms
+            3. Recommend the most appropriate medical specialty
+            4. Explain your recommendation clearly
+            
+            Available specialties: {', '.join(self.specialty_config['specialties'].keys())}
+            
+            Be thorough but efficient in your assessment. Ask follow-up questions only when necessary 
+            to make an accurate specialty recommendation.""",
+            chat_ctx=chat_ctx
+        )
+
+    async def on_enter(self) -> None:
+        userdata: MedicalSessionInfo = self.session.userdata
+        greeting = self.specialty_config['prompts']['greeting']
+        await self.session.say(
+            f"Hello {userdata.patient_name}, {greeting}"
+        )
+        
+        # Start assessment
+        assessment_intro = self.specialty_config['prompts']['assessment_intro']
+        await self.session.say(assessment_intro)
+
+    @function_tool()
+    async def ask_clarifying_question(self, context: RunContext_T, question: str):
+        """Ask a clarifying question to better understand the patient's condition."""
+        await self.session.say(question)
+        return None
+
+    @function_tool()
+    async def determine_specialty(self, context: RunContext_T, specialty: str, confidence: str, reasoning: str):
+        """Determine the recommended medical specialty.
+        
+        Args:
+            specialty: The recommended specialty (must match available specialties)
+            confidence: Confidence level - 'high', 'medium', or 'low'
+            reasoning: Explanation for the specialty recommendation
+        """
+        available_specialties = list(self.specialty_config['specialties'].keys())
+        
+        if specialty.lower() not in [s.lower() for s in available_specialties]:
+            await self.session.say("Let me reassess your symptoms to make a better recommendation.")
+            return None
+            
+        valid_confidence = ['high', 'medium', 'low']
+        if confidence.lower() not in valid_confidence:
+            confidence = 'medium'
+            
+        # Store the recommendation
+        context.userdata.recommended_specialty = specialty.lower()
+        context.userdata.specialty_confidence = confidence.lower()
+        
+        # Get specialty information
+        specialty_info = self.specialty_config['specialties'].get(specialty.lower(), {})
+        specialty_name = specialty_info.get('name', specialty)
+        specialty_description = specialty_info.get('description', '')
+        
+        # Provide recommendation
+        if confidence.lower() == 'high':
+            recommendation_msg = self.specialty_config['prompts']['specialty_recommendation'].format(
+                specialty_name=specialty_name,
+                specialty_description=specialty_description
+            )
+        else:
+            recommendation_msg = self.specialty_config['prompts']['general_medicine_recommendation']
+            
+        await self.session.say(f"{recommendation_msg} {reasoning}")
+        
+        # Hand off to care coordinator
+        handoff_msg = self.specialty_config['prompts']['handoff_message'].format(
+            specialty_name=specialty_name
+        )
+        await self.session.say(handoff_msg)
+        
+        return CareCoordinatorAgent()
+
+    @function_tool()
+    async def recommend_multiple_specialties(self, context: RunContext_T, 
+                                           primary_specialty: str, secondary_specialty: str, reasoning: str):
+        """Recommend multiple specialties when symptoms span multiple areas.
+        
+        Args:
+            primary_specialty: The primary recommended specialty
+            secondary_specialty: The secondary recommended specialty
+            reasoning: Explanation for multiple specialty recommendation
+        """
+        available_specialties = list(self.specialty_config['specialties'].keys())
+        
+        if (primary_specialty.lower() not in [s.lower() for s in available_specialties] or 
+            secondary_specialty.lower() not in [s.lower() for s in available_specialties]):
+            await self.session.say("Let me reassess your symptoms to make a better recommendation.")
+            return None
+            
+        # Store primary specialty
+        context.userdata.recommended_specialty = primary_specialty.lower()
+        context.userdata.specialty_confidence = 'medium'
+        
+        # Get specialty information
+        primary_info = self.specialty_config['specialties'].get(primary_specialty.lower(), {})
+        secondary_info = self.specialty_config['specialties'].get(secondary_specialty.lower(), {})
+        
+        primary_name = primary_info.get('name', primary_specialty)
+        secondary_name = secondary_info.get('name', secondary_specialty)
+        
+        # Provide recommendation
+        recommendation_msg = self.specialty_config['prompts']['multiple_specialties'].format(
+            primary_specialty=primary_name,
+            secondary_specialty=secondary_name
+        )
+        
+        await self.session.say(f"{recommendation_msg} {reasoning}")
+        
+        # Hand off to care coordinator
+        handoff_msg = self.specialty_config['prompts']['handoff_message'].format(
+            specialty_name=primary_name
+        )
+        await self.session.say(handoff_msg)
+        
+        return CareCoordinatorAgent()
 
 class EmergencyAgent(Agent):
     """Handles emergency situations requiring immediate care"""
@@ -227,9 +379,11 @@ class CareCoordinatorAgent(Agent):
 
     async def on_enter(self) -> None:
         userdata: MedicalSessionInfo = self.session.userdata
+        specialty_info = f" for {userdata.recommended_specialty}" if userdata.recommended_specialty else ""
         await self.session.generate_reply(
             instructions=f"""Greet {userdata.patient_name} and provide care recommendations based on their 
-            {userdata.emergency_level} priority assessment. Give specific next steps."""
+            {userdata.emergency_level} priority assessment{specialty_info}. Give specific next steps for scheduling 
+            and follow-up care."""
         )
 
     @function_tool()
@@ -237,8 +391,12 @@ class CareCoordinatorAgent(Agent):
                                  appointment_type: str, timeframe: str):
         """Schedule an appointment for the patient."""
         userdata = context.userdata
+        specialty_detail = ""
+        if userdata.recommended_specialty:
+            specialty_detail = f" with a {userdata.recommended_specialty} specialist"
+        
         await self.session.say(
-            f"I'm scheduling a {appointment_type} appointment for you within {timeframe}. "
+            f"I'm scheduling a {appointment_type} appointment{specialty_detail} for you within {timeframe}. "
             f"You'll receive a confirmation shortly."
         )
         return None

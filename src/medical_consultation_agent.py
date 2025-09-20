@@ -14,34 +14,22 @@ from livekit import agents
 from livekit.agents import AgentSession, Agent, RoomInputOptions
 from livekit.plugins import google
 
-from agents.medical_agents import TriageAgent, SupportAgent, BillingAgent
-from services.session_manager import session_manager
-from models.medical_models import Patient, UrgencyLevel
-from utils.logger import get_logger, LogExecutionTime, log_function_call
+from medical_agents import TriageAgent, SupportAgent, BillingAgent
+from session_manager import session_manager
+from medical_models import Patient, UrgencyLevel
+from utils.logger import logger
 
 load_dotenv()
 
 # Initialize logger
-logger = get_logger("MedicalConsultationAgent")
+logger.info("MedicalConsultationAgent initialized")
+
 
 class MedicalConsultationAgent(Agent):
     """Main orchestrator for the medical voice agent system"""
     
-    def __init__(self, room_name: str = None, user_id: str = None) -> None:
-        logger.info(f"Initializing MedicalConsultationAgent for user: {user_id}, room: {room_name}")
-        
-        self.room_name = room_name
-        self.user_id = user_id
-        self.current_agent = None
-        self.session = None
-        
-        # Initialize session
-        if user_id and room_name:
-            self.session = session_manager.create_session(
-                user_id=user_id,
-                room_name=room_name,
-                initial_context={"entry_time": datetime.now().isoformat()}
-            )
+    def __init__(self) -> None:
+        logger.info(f"Initializing MedicalConsultationAgent for user")
         
         # Load configurations
         self.prompts = self._load_prompts()
@@ -88,7 +76,6 @@ class MedicalConsultationAgent(Agent):
         Always prioritize patient safety and provide clear, helpful guidance.
         """
     
-    @log_function_call()
     def transfer_to_agent(self, agent_type: str, context: Dict[str, Any] = None) -> bool:
         """Transfer conversation to a specific agent"""
         try:
@@ -129,7 +116,6 @@ class MedicalConsultationAgent(Agent):
             logger.error(f"Error transferring to {agent_type} agent: {e}")
             return False
     
-    @log_function_call()
     def process_patient_input(self, user_input: str) -> str:
         """Process patient input through the current agent"""
         try:

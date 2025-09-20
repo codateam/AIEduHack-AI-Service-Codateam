@@ -3,15 +3,16 @@ from datetime import datetime, date, timedelta
 import json
 from pathlib import Path
 
-from ..models.medical_models import (
+from medical_models import (
     Patient, HealthcareProfessional, Appointment, AppointmentRequest,
     Prescription, PrescriptionRefillRequest, Subscription, Payment,
     TriageAssessment, UrgencyLevel, AppointmentType, AppointmentStatus,
     PrescriptionStatus, SubscriptionType, SubscriptionStatus, ToolCall
 )
-from utils.logger import get_logger
+from utils.logger import logger
 
-logger = get_logger("MedicalTools")
+logger.info("MedicalTools initialized")
+
 
 class MedicalDatabase:
     """Simple in-memory database for medical data (replace with real database in production)"""

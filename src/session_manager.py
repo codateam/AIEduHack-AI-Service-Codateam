@@ -5,10 +5,11 @@ from datetime import datetime, timedelta
 from pathlib import Path
 import threading
 
-from ..models.medical_models import UserSession, Patient
-from utils.logger import get_logger
+from medical_models import UserSession, Patient
+from utils.logger import logger
 
-logger = get_logger("SessionManager")
+logger.info("SessionManager initialized")
+
 
 class SessionManager:
     """Manages user sessions for the medical voice agent system"""
