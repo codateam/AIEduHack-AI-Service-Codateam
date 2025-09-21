@@ -107,4 +107,5 @@ livekit-api==1.0.5
 livekit-agents[openai]~=1.2
 livekit-agents[cartesia]~=1.2
 livekit-agents[deepgram]~=1.2
+livekit-agents[elevenlabs]~=1.2
 livekit-plugins-noise-cancellation~=0.2

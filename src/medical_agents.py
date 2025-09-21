@@ -17,25 +17,21 @@ from session_manager import session_manager
 from utils.logger import logger
 
 
-@dataclass
-class UserSessionInfo:
-    name: str
-    email: str
-    
 
 
 
 
 
-def load_medical_config(config_type: str):
+
+
+def load_yaml(file_path: str):
     """Load medical configuration from YAML files"""
-    config_path = Path(__file__).parent.parent / "configs" / f"medical_{config_type}.yaml"
     try:
-        with open(config_path, 'r', encoding='utf-8') as file:
-            logger.debug(f"Loading {config_type} config from {config_path}")
+        with open(file_path, 'r', encoding='utf-8') as file:
+            logger.debug(f"Loading {file_path}")
             return yaml.safe_load(file)
     except Exception as e:
-        logger.error(f"Failed to load {config_type} config from {config_path}", exc_info=True)
+        logger.error(f"Failed to load {file_path}", exc_info=True)
         raise
 
 class TriageAgent(Agent):
